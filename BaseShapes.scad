@@ -12,7 +12,7 @@ module rhHalfCylinder(c, rRadius, z)
     difference()
     {
         transCylinder(c, negR, 0, 0, rRadius, z);
-        translate([-rD, 0, -z]) cube(rD, rD, z * 3.0);  
+        //translate([-rD, 0, -z]) cube(rD, rD, z * 3.0);  
     }
 }
 rhHalfCylinder("red", 5, 3); 
