@@ -1,7 +1,13 @@
-
 // Copyright Stephen Morrisson 2017
+// All rights reserved
 
-use <base3d.scad>
+// {xyz, trans, rot} UBar
+
+
+use <myCube.scad>
+use <myCylinder.scad>
+
+
 
 module xyzUBar(cB, cL, cR, xBase, yBase, zBase, 
     xLeft, zLeft, xRight, zRight)

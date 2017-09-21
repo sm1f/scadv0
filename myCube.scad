@@ -2,6 +2,8 @@
 // Copyright Stephen Morrisson 2017
 // All rights reserved
 
+// {xyz, rot, trans, tr} Cube
+
 module xyzCube(c, x, y, z)
 {
     color(c) cube([x, y, z], false);
