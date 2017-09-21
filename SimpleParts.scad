@@ -1,4 +1,5 @@
 
+// Copyright Stephen Morrisson 2017
 
 use <base3d.scad>
 
