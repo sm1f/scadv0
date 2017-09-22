@@ -7,7 +7,7 @@ use <myCube.scad>
 
 module rhCentCylinder(c, rRadius, z)
 {
-    color(c) cylinder(h=z, r=rRadius, center=true);
+    color(c) cylinder(h=z, r=rRadius, center=false);
 }
 translate([-15, -15, 0]) rhCentCylinder("red", 3, 2);
 
