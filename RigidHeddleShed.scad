@@ -18,6 +18,9 @@ module ShedAB(c, xBoarder, yBoarder, z, xA, yA, xB, yB, xSpacer, count)
     xSize = xBoarder * 2.0 + count * xAB - xSpacer;
     ySize = yBoarder * 2.0 + yMaxOpening;
     
+    yAOffset = yBoarder + ((yMaxOpening - yA) / 2.0);
+    yBOffset = yBoarder + ((yMaxOpening - yB) / 2.0);
+    
     difference()
     {
         xyzCube(c, xSize, ySize, z);
@@ -26,14 +29,14 @@ module ShedAB(c, xBoarder, yBoarder, z, xA, yA, xB, yB, xSpacer, count)
             for (i = [0: iCount])
             {
                 xAO = xBoarder + (i * xAB);
-                transCube(c, xAO, yBoarder, -z, xA, yA, zBig);
+                transCube(c, xAO, yAOffset, -z, xA, yA, zBig);
                 xBO = xAO + xA + xSpacer;
-                transCube(c, xBO, yBoarder, -z, xB, yB, zBig);  
+                transCube(c, xBO, yBOffset, -z, xB, yB, zBig);  
             }
         }
     }
 }
-//ShedAB("green", 3, 3, 1, 1.6, 10, 1.6, 1.6, 1.6, 2);
+//ShedAB("green", 3, 3, 1, 1.6, 10, 1.6, 16, 1.6, 2);
 //translate([-3,0,0]) ShedAB("green", 3, 3, 1, 2, 10, 3, 4, 1, 3);
 
 module SimpleRigidShed(c, aBoarder, z, aOpenings, yA, count)
@@ -49,7 +52,7 @@ module transSimpleRigidShed(c, xO, yO, zO, aBoarder, z, aOpenings, yA, count)
     translate([xO, yO, zO])
         SimpleRigidShed(c, aBoarder, z, aOpenings, yA, count);
 }
-//transSimpleRigidShed("green", 2,3,4, 1.6, 1.6, 1.6, 16.0, 20);
+transSimpleRigidShed("red", 2,-50,4, 1.6, 1.6, 1.6, 16.0, 20);
 
 // count must be even.
 module transSimpleShed(c, xO, yO, zO, aBoarder, z, xHole, yHole, count)
@@ -60,5 +63,5 @@ module transSimpleShed(c, xO, yO, zO, aBoarder, z, xHole, yHole, count)
             xHole, yHole, xHole, yHole, xHole, count / 2);
     }
 }
-transSimpleShed("green", 2,3,4, 1.6, 1.6, 1.6, 16.0, 20);
+transSimpleShed("green", 2,-30,4, 1.6, 1.6, 1.6, 16.0, 20);
 
