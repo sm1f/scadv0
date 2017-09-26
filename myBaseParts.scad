@@ -17,7 +17,7 @@ module xyzUBar(cB, cL, cR, xBase, yBase, zBase,
     transCube(cR, xBase - xRight, 0, zBase, xRight, yBase, zRight);
 }
 
-//xyzUBar("red", "green", "blue", 10, 14, 1, 2, 3, 4, 5);
+xyzUBar("red", "green", "blue", 10, 14, 1, 2, 3, 4, 5);
 
 module transUBar(c, xO, yO, zO, xB, yB, zB, xL, zL, xR, zR)
 {
