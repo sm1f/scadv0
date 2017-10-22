@@ -16,8 +16,8 @@ module RigidHeddleLoom()
    // rigid heddle shed
     transSimpleRigidShed("green", 0,-30,0, 1.6, 1.6, 1.6, yShed, 12); 
     
-    transCenterUpright("green", 1, -10,0,0, yShed * 2);
-    transCenterUpright("green", 1, -20,0,0, yShed * 2);
+    transCenterUpright("green", -10,0,0, yShed * 2);
+    transCenterUpright("green", -20,0,0, yShed * 2);
 }
 RigidHeddleLoom();
 
